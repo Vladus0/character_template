@@ -1,5 +1,7 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import random
+import os
+
 
 env = Environment(
     loader=FileSystemLoader('.'),
@@ -10,7 +12,10 @@ template = env.get_template('template.html')
 
 def main():
     cards_count = int(input("Сколько карточек вы хотите созадть: "))
-
+    folder_path = 'characters'
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        
     for card_number in range(cards_count):
         personages_name = input("Введите имя персонажа ")
 
