@@ -19,7 +19,10 @@ def main():
     for card_number in range(cards_count):
         personages_name = input("Введите имя персонажа ")
 
-        races = ["Человек", "Орк"]
+        races = [
+            "Человек",
+            "Орк"
+        ]
 
         while True:
             personages_race = input(f"{races} \nВведите название рассы из предлженных: ")
@@ -29,7 +32,13 @@ def main():
                 print("Расса введена неправильно")
 
 
-        classes = ["Охотник", "Маг", "Воин", "Ассасин", "Бард"]
+        classes = [
+            "Охотник",
+            "Маг",
+            "Воин",
+            "Ассасин",
+            "Бард"
+        ]
 
         while True:
             personages_class = input(f"{classes} \nВведите название класса из предлженных: ")
@@ -54,7 +63,7 @@ def main():
                         "luck": personages_luck,
                         "temper": personages_temper
                 },
-                "img_path": 'images/archer.png'
+                "img_path": '../images/archer.png'
             },
             "Маг": {
                 "skills": ['Стрела ледяного огня', 'Снятие проклятия', 'Огненный взрыв', 'Обледенение', 'Ледяное копье', 'Конус холода', 'Прилив сил', 'Морозный доспех'],
@@ -65,7 +74,7 @@ def main():
                         "luck": personages_luck,
                         "temper": personages_temper
                 },
-                "img_path": 'images/wizard.png'
+                "img_path": '../images/wizard.png'
             },
             "Воин": {
                 "skills": ['Блок щитом', 'Казнь', 'Рывок', 'Боевой крик', 'Вихрь', 'Парирование', 'Мощный удар', 'Глубокие раны'],
@@ -76,7 +85,7 @@ def main():
                         "luck": personages_luck,
                         "temper": personages_temper
                 },
-                "img_path": 'images/warrior.png'
+                "img_path": '../images/warrior.png'
             },
             "Ассасин": {
                 "skills": ['Отравление', 'Взлом замка', 'Подлый трюк', 'Исчезновение', 'Ложный выпад', 'Внезапный удар', 'Ошеломление', 'Спринт'],
@@ -87,7 +96,7 @@ def main():
                         "luck": 15,
                         "temper": personages_temper
                 },
-                "img_path": 'images/assasin.png'
+                "img_path": '../images/assasin.png'
             },
             "Бард": {
                 "skills": ['Аккорды ветра', 'Аккорды воды', 'Исцеление', 'Соната жизни', 'Пауза', 'Плач сирен', 'Песнь ветра', 'Реквием'],
@@ -98,7 +107,7 @@ def main():
                         "luck": personages_luck,
                         "temper": 15
                 },
-                "img_path": 'images/bard.png'
+                "img_path": '../images/bard.webp'
             },
         }
         skills = clases_base[personages_class]["skills"]
@@ -122,6 +131,7 @@ def main():
 
         with open(f'characters/index{card_number}.html', 'w', encoding="utf8") as file:
             file.write(rendered_page)
+
 
 if __name__=="__main__":
     main()
